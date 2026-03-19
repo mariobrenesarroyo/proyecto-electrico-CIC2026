@@ -1,1 +1,20 @@
-site_name: My Docs
+site_name: Proyecto Eléctrico CIC2026
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Inicio: index.md
+  - Bitácora:
+    - Semana 1: bitacora/semana-01.md
+    - Semana 2: bitacora/semana-02.md

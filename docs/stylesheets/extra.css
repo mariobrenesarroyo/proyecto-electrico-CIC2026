@@ -1,0 +1,7 @@
+:root {
+  --md-primary-fg-color: #263238; /* Color oscuro similar al PDF */
+}
+
+.admonition.info {
+  border-left-color: #2196f3;
+}
