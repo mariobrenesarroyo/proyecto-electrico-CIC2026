@@ -1,14 +1,26 @@
 site_name: Proyecto Eléctrico CIC2026
+
 theme:
   name: material
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.expand
+    - content.code.copy
 
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
   - stylesheets/extra.css
@@ -16,5 +28,8 @@ extra_css:
 nav:
   - Inicio: index.md
   - Bitácora:
-    - Semana 1: bitacora/semana-01.md
-    - Semana 2: bitacora/semana-02.md
+      - Semana 1: bitacora/semana-01.md
+      - Semana 2: bitacora/semana-02.md
+  - Análisis y Problemas:
+      - Semana 1: analisis/semana-01.md
+      - Semana 2: analisis/semana-02.md
