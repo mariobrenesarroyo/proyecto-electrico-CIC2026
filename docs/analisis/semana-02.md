@@ -5,6 +5,9 @@ Esta semana se estableció la línea base (Baseline) del sistema para comparar f
 ## Desempeño del Sistema Base
 * **IAE:** 637.8603
 * **TV:** 5.5253
+* **R1**  1.0064
+* **R2**  0.9931
+* **J**   1.0037
 * **Estado de Bypass:** No activado (0).
 
 ## Análisis de Gráficas

@@ -1,10 +1,34 @@
-venv/
-site/
-.cache/
-__pycache__/
+# --- Entorno virtual de Python ---
+venv/              # Carpeta del entorno virtual
+ENV/               # Alternativas de nombre
+env/
+*.venv/
+
+# --- Archivos generados por MkDocs ---
+site/              # Carpeta generada al hacer mkdocs build
+.cache/            # Cache interna de MkDocs
+
+# --- Archivos temporales de Python ---
+__pycache__/       # Bytecode compilado
 *.pyc
 *.pyo
 *.pyd
+
+# --- Archivos de logs y bases de datos ---
 *.log
 *.sqlite3
-.DS_Store
+
+# --- Archivos del sistema ---
+.DS_Store          # MacOS
+Thumbs.db          # Windows
+
+# --- MATLAB/Simulink ---
+*.mat              # Resultados de simulación
+slprj/             # Carpeta de compilación de Simulink
+*.mex*             # Archivos compilados de MATLAB
+*.asv              # Autosave de MATLAB
+*.mdl.autosave     # Autosave de modelos Simulink
+*.bak              # Copias de respaldo
+
+# --- Otros temporales ---
+*.tmp
