@@ -599,11 +599,67 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#potencias-y-eficiencia" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#justificacion-de-variables-analisis-de-sensibilidad" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Potencias y Eficiencia
+        Justificación de Variables (Análisis de Sensibilidad)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Justificación de Variables (Análisis de Sensibilidad)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafica-de-correlacion-de-perturbaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gráfica de correlación de perturbaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identificacion-de-la-planta-estrategia-miso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificación de la Planta: Estrategia MISO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identificación de la Planta: Estrategia MISO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-de-mejor-ajuste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo de mejor ajuste
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultados-del-modelo-p1d-3-entradas-1-salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados del Modelo P1D (3 Entradas, 1 Salida)
       
     </span>
   </a>
@@ -713,11 +769,67 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#potencias-y-eficiencia" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#justificacion-de-variables-analisis-de-sensibilidad" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Potencias y Eficiencia
+        Justificación de Variables (Análisis de Sensibilidad)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Justificación de Variables (Análisis de Sensibilidad)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafica-de-correlacion-de-perturbaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gráfica de correlación de perturbaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identificacion-de-la-planta-estrategia-miso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identificación de la Planta: Estrategia MISO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identificación de la Planta: Estrategia MISO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-de-mejor-ajuste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo de mejor ajuste
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultados-del-modelo-p1d-3-entradas-1-salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados del Modelo P1D (3 Entradas, 1 Salida)
       
     </span>
   </a>
@@ -758,11 +870,14 @@
 
 
 <h1 id="analisis-de-resultados-semana-2">Análisis de Resultados: Semana 2</h1>
-<p>Esta semana se estableció la línea base (Baseline) del sistema para comparar futuras mejoras en el control.</p>
+<p>Esta semana se estableció la línea base (Baseline) del sistema para comparar futuras mejoras en el control y se realizó la identificación paramétrica del modelo de la planta mediante un enfoque multivariable.</p>
 <h2 id="desempeno-del-sistema-base">Desempeño del Sistema Base</h2>
 <ul>
 <li><strong>IAE:</strong> 637.8603</li>
 <li><strong>TV:</strong> 5.5253</li>
+<li><strong>R1:</strong> 1.0064</li>
+<li><strong>R2:</strong> 0.9931</li>
+<li><strong>J:</strong> 1.0037</li>
 <li><strong>Estado de Bypass:</strong> No activado (0).</li>
 </ul>
 <h2 id="analisis-de-graficas">Análisis de Gráficas</h2>
@@ -772,13 +887,46 @@
 <h3 id="control-y-referencia">Control y Referencia</h3>
 <p>El error de seguimiento es notable, lo que justifica la necesidad de un nuevo controlador.
 <img alt="Control" src="../../imagenes/problema/Resutados/Referencia_vs_salida_y_senal_de_control.png" /></p>
-<h3 id="potencias-y-eficiencia">Potencias y Eficiencia</h3>
-<p><img alt="Eficiencia" src="../../imagenes/problema/Resutados/Potencias_termicas_COP_y_estado_del_bypass.png" /></p>
+<hr />
+<h2 id="justificacion-de-variables-analisis-de-sensibilidad">Justificación de Variables (Análisis de Sensibilidad)</h2>
+<p>Para el diseño del controlador, se realizó un análisis de correlación cruzada con el fin de identificar las variables con mayor impacto sobre la temperatura de salida del evaporador (<span class="arithmatex">\(T_{s,Evap}\)</span>).</p>
+<h3 id="grafica-de-correlacion-de-perturbaciones">Gráfica de correlación de perturbaciones</h3>
+<p><img alt="Correlacion" src="../../imagenes/problema/Resutados/Justificaci%C3%B3n%20de%20Variables%20-%20CIC2026.png" /></p>
+<p><strong>Hallazgos Clave:</strong>
+* <strong><span class="arithmatex">\(T_{e,Evap}\)</span> (<span class="arithmatex">\(R = +0.53\)</span>):</strong> Es la variable con mayor impacto directo sobre la salida.
+* <strong><span class="arithmatex">\(T_{s,Gen}\)</span> (<span class="arithmatex">\(R = -0.47\)</span>):</strong> Presenta una fuerte relación inversa, indicando que la energía del generador es crítica.
+* <strong><span class="arithmatex">\(\alpha_{ref}\)</span> (<span class="arithmatex">\(R = +0.39\)</span>):</strong> Confirma la autoridad del actuador sobre la variable de proceso.
+* <strong><span class="arithmatex">\(T_{amb}\)</span> (<span class="arithmatex">\(R = +0.08\)</span>):</strong> Se mantiene en el análisis por su relevancia termodinámica a largo plazo.</p>
+<hr />
+<h2 id="identificacion-de-la-planta-estrategia-miso">Identificación de la Planta: Estrategia MISO</h2>
+<p>Para capturar la complejidad de la máquina Yazaki, se optó por una estrategia de identificación <strong>MISO (Multiple-Input, Single-Output)</strong>. A diferencia de un modelo SISO simple, este enfoque permite desacoplar el efecto de la válvula de mezcla de los efectos de las perturbaciones externas.</p>
+<h3 id="modelo-de-mejor-ajuste">Modelo de mejor ajuste</h3>
+<p><img alt="Modelo" src="../../imagenes/problema/Resutados/modelo_ganador.png" /></p>
+<h3 id="resultados-del-modelo-p1d-3-entradas-1-salida">Resultados del Modelo P1D (3 Entradas, 1 Salida)</h3>
+<p>Utilizando el algoritmo <code>PROCEST</code> con una precisión de ajuste del <strong>99.42%</strong>, se determinó que la salida <span class="arithmatex">\(y\)</span> (<span class="arithmatex">\(T_{s,Evap}\)</span>) responde a la suma de tres funciones de transferencia independientes:</p>
+<div class="arithmatex">\[T_{s,Evap}(s) = G_{11}(s) \cdot \alpha_{ref} + G_{12}(s) \cdot T_{s,Gen} + G_{13}(s) \cdot T_{amb}\]</div>
+<p><strong>Parámetros identificados por canal:</strong></p>
+<ol>
+<li><strong>Canal de Control (<span class="arithmatex">\(G_{11}\)</span>):</strong> * <span class="arithmatex">\(K_p = -0.0361\)</span>, <span class="arithmatex">\(T_{p1} = 2.62s\)</span>, <span class="arithmatex">\(T_d = 2.84s\)</span>.</li>
+<li>
+<p><strong>Interpretación:</strong> Respuesta rápida con ganancia negativa. El retardo (<span class="arithmatex">\(T_d\)</span>) es comparable a la constante de tiempo (<span class="arithmatex">\(T_{p1}\)</span>), lo que exige sintonía robusta.</p>
+</li>
+<li>
+<p><strong>Canal del Generador (<span class="arithmatex">\(G_{12}\)</span>):</strong> * <span class="arithmatex">\(K_p = 0.0011\)</span>, <span class="arithmatex">\(T_{p1} = 502.7s\)</span>, <span class="arithmatex">\(T_d = 1.16s\)</span>.</p>
+</li>
+<li>
+<p><strong>Interpretación:</strong> Perturbación de ganancia despreciable pero de dinámica extremadamente lenta.</p>
+</li>
+<li>
+<p><strong>Canal Ambiente (<span class="arithmatex">\(G_{13}\)</span>):</strong> * <span class="arithmatex">\(K_p = 0.0292\)</span>, <span class="arithmatex">\(T_{p1} = 14.86s\)</span>, <span class="arithmatex">\(T_d = 26.08s\)</span>.</p>
+</li>
+<li><strong>Interpretación:</strong> Impacto significativo con un retardo de transporte de 26 segundos, ideal para implementar <strong>Feedforward</strong>.</li>
+</ol>
 <hr />
 <h2 id="problemas-en-el-camino">Problemas en el Camino</h2>
 <ul>
 <li><strong>WSL vs Git:</strong> Se experimentaron retrasos de hasta 300s en Git por la carpeta <code>venv</code>. Se solucionó implementando un <code>.gitignore</code> correcto.</li>
-<li><strong>Renderizado de Fórmulas:</strong> Se corrigió el archivo <code>mkdocs.yml</code> para soportar MathJax, permitiendo visualizar correctamente <span class="arithmatex">\(T_{eva}\)</span> y <span class="arithmatex">\(T_{gen}\)</span>.</li>
+<li><strong>Renderizado de Fórmulas:</strong> Se corrigió el archivo <code>mkdocs.yml</code> para soportar MathJax, permitiendo visualizar correctamente la notación matemática en la bitácora.</li>
 </ul>
 
 

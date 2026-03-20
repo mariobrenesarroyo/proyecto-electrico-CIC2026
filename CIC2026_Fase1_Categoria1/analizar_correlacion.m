@@ -1,26 +1,30 @@
-% 1. Preparar la matriz de datos (incluimos la salida al final para la matriz)
-datos = [alpha_ref, T_amb, Ts_TES, Te_Evap, Te_Gen, Ts_Evap];
-nombres = {'alpha_ref', 'T_amb', 'Ts_TES', 'Te_Evap', 'Te_Gen', 'Ts_Evap'};
+% 1. Definir la matriz de todas las variables posibles
+% Asegúrate de que todos los vectores tengan la misma longitud
+nombres = {'alpha_ref', 'Ts_Gen', 'T_amb', 'Te_Evap', 'Ts_TES', 'Te_Torr_ref', 'Ts_Evap'};
+datos_completos = [alpha_ref, Ts_Gen, T_amb, Te_Evap, Ts_TES, Te_Torr_ref, Ts_Evap];
 
-% 2. Calcular la matriz de correlación (Base MATLAB)
-% R será una matriz donde la última fila/columna es la correlación con Ts_Evap
-R = corrcoef(datos);
+% 2. Calcular matriz de correlación
+R_matrix = corrcoef(datos_completos);
 
-% 3. Extraer solo la correlación de las entradas con la salida (Ts_Evap)
-% La última columna (excluyendo el último valor que es 1)
-correlaciones_salida = R(1:end-1, end);
+% 3. Extraer solo la última columna (impacto sobre Ts_Evap)
+impacto = R_matrix(1:end-1, end);
 
-% 4. Visualizar resultados
-figure;
-h = bar(correlaciones_salida);
+% 3.1 Imprimir en terminar la correlacion
+% Mostrar en la terminal la correlación de cada variable con Ts_Evap
+fprintf('Correlación de cada variable con Ts_Evap:\n');
+for i = 1:length(impacto)
+    fprintf('  %s : %+.4f\n', nombres{i}, impacto(i));
+end
+
+% 4. Graficar para tu reporte de proyecto
+figure('Name', 'Justificación de Variables - CIC2026');
+b = bar(impacto, 'FaceColor', [0 0.4470 0.7410]);
 set(gca, 'XTick', 1:length(nombres)-1, 'XTickLabel', nombres(1:end-1));
 xtickangle(45);
 ylabel('Coeficiente de Correlación (R)');
-title('Impacto de las Variables en Ts\_Evap');
+title('Impacto de Variables sobre la Temperatura de Salida (Ts\_Evap)');
 grid on;
 
-% 5. Mostrar en consola para tu análisis
-fprintf('--- Impacto sobre Ts_Evap (Categoría 1) ---\n');
-for i = 1:length(correlaciones_salida)
-    fprintf('%s: %.4f\n', nombres{i}, correlaciones_salida(i));
-end
+% Añadir etiquetas de valor sobre las barras
+text(1:length(impacto), impacto, num2str(impacto, '%0.2f'), ...
+    'VerticalAlignment', 'bottom', 'HorizontalAlignment', 'center');
