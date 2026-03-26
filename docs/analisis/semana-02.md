@@ -63,3 +63,14 @@ $$T_{s,Evap}(s) = G_{11}(s) \cdot \alpha_{ref} + G_{12}(s) \cdot T_{s,Gen} + G_{
 ## Problemas en el Camino
 * **WSL vs Git:** Se experimentaron retrasos de hasta 300s en Git por la carpeta `venv`. Se solucionó implementando un `.gitignore` correcto.
 * **Renderizado de Fórmulas:** Se corrigió el archivo `mkdocs.yml` para soportar MathJax, permitiendo visualizar correctamente la notación matemática en la bitácora.
+
+
+
+
+"notas"
+copia del archivo
+- dejar solo la planta 
+hacer un modelo de prueba y un modelo de  entrenamiento 
+salidas constantes y despues con ruido 
+aplicar un cambio escalón primero, despues varias la entrada alpha_ref
+hacer una función de de transferencia de las perturbaciones con respecto a la salida que importa en el sistema.
