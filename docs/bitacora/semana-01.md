@@ -11,6 +11,8 @@
     * Revisión de la normativa del Concurso de Ingeniería de Control.
 * **Resultados:** Establecimiento de la Categoría 1 como objetivo principal.
     * Se habló con el profesor Jose david para definir el proyecto como es que se va a trabajar en el mismo.
+**Horas invertidas:** 1 horas
+
 
 ## Sesión 1.2
 * **Fecha:** 09 de marzo, 2026
@@ -19,7 +21,10 @@
     * Estudio del modelo de la máquina Yazaki WFC10.
 * **Resultados:** Entorno de desarrollo configurado y listo para pruebas.
 * **Trabajo Futuro:** Ejecución de la primera simulación Baseline.
+**Horas invertidas:** 5 horas
 
+---
+Total semanal: 6 horas
 ---
 !!! info "Resultados Técnicos"
     El detalle de los problemas encontrados con el simulador se encuentra en el [Análisis de la Semana 1](../analisis/semana-01.md).
