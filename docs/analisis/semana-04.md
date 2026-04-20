@@ -1,4 +1,4 @@
-# 📊 Reporte de Control: Diseño e Implementación del Controlador Proactivo (PI + Feedforward)
+#  Reporte de Control: Diseño e Implementación del Controlador Proactivo (PI + Feedforward)
 
 Tras la identificación de los modelos de planta y perturbaciones en la fase anterior ([Análisis de la Semana 3](../analisis/semana-03.md)), se procedió al diseño de un sistema de control capaz de regular la temperatura de salida del evaporador ($T_{s,evap}$) ante variaciones en la referencia ($T_{s,evap,ref}$) y perturbaciones externas.
 
@@ -23,7 +23,7 @@ Las constantes del controlador se calcularon según:
 
 ---
 
-## ⚙️ 2. Implementación y Estrategia Proactiva
+##  2. Implementación y Estrategia Proactiva
 
 El controlador se implementó en Simulink cerrando el lazo con la señal de error $e(t) = T_{s,evap,ref} - T_{s,evap}$. Para maximizar el desempeño, se añadieron bloques de **Prealimentación (Feedforward)**.
 
@@ -36,7 +36,7 @@ $$K_{ff} = - \frac{K_{perturbación}}{K_{planta}}$$
 
 ---
 
-## 📈 3. Análisis de Resultados: Barrido de Lambdas
+##  3. Análisis de Resultados: Barrido de Lambdas
 
 Se realizó un barrido paramétrico de $\lambda$ para observar el impacto en los índices de desempeño del concurso (**IAE**, **TV** y el índice global **J**).
 
@@ -61,7 +61,7 @@ A continuación, se comparan los tres mejores candidatos para definir el control
 
 ---
 
-## 🚀 4. Evolución hacia el Control Proactivo
+##  4. Evolución hacia el Control Proactivo
 
 ![Diagrama-FF](../imagenes/problema/prueba_alpha_ref_escalon/control-FF.png)
 
@@ -80,6 +80,6 @@ Una vez fijado el lazo PI ($\lambda=18$), se integraron progresivamente las comp
 
 ---
 
-## 🏁 5. Conclusión Final
+##  5. Conclusión Final
 
 El diseño final basado en un **PI con sintonía Lambda ($\lambda=18$) más doble compensación Feedforward** arrojó un índice global de **$J = 0.8844$**. Esto representa una mejora del **11.56%** respecto al controlador de referencia (CR1). El sistema es robusto, suave en su accionamiento y altamente preciso ante perturbaciones de carga, cumpliendo con creces los objetivos de la Categoría 1 del CIC2026.

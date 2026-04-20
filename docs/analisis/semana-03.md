@@ -1,8 +1,8 @@
-# 📊 Análisis de Resultados: Semana 3
+#  Análisis de Resultados: Semana 3
 
 Gracias al programa `valores_promedio.m`, logramos obtener estos valores promedio de las siguientes variables para el punto de operación:
 
-### 📍 Valores Promedio
+###  Valores Promedio
 | Variable | Descripción | Valor Promedio |
 | :--- | :--- | :--- |
 | **Ts_TES** | Temperatura salida TES | 89.4452 °C |
@@ -12,7 +12,7 @@ Gracias al programa `valores_promedio.m`, logramos obtener estos valores promedi
 
 ---
 
-## 📈 Gráficas de Comportamiento Dinámico
+##  Gráficas de Comportamiento Dinámico
 Se hicieron steps de $\alpha_{ref}$ que varían de 0.5 a 0.8 y 0.2, obteniendo los siguientes resultados:
 
 ![Control](../imagenes/problema/prueba_alpha_ref_escalon/alpha_ref_vs_ts_evap.png)
@@ -26,7 +26,7 @@ Se hicieron steps de $\alpha_{ref}$ que varían de 0.5 a 0.8 y 0.2, obteniendo l
 
 ---
 
-## 🛠 Identificación de la Planta: Estrategia SystemIdentification
+##  Identificación de la Planta: Estrategia SystemIdentification
 
 Para los modelos de planta, se utilizó la estructura de transferencia:
 $$G(s) = \frac{K_p}{1+T_{p1}s} e^{-T_d s}$$
@@ -111,7 +111,7 @@ Aplicando $\alpha_{ref}$ como una senoidal $\sin(0.3, 0.01, 0) + 0.5$:
 ---
 
 
-# ⚖️ Comparativa de Modelos: Teórico vs. Identificación Experimental
+#  Comparativa de Modelos: Teórico vs. Identificación Experimental
 
 Esta tabla contrasta los parámetros del modelo de transferencia  
 
