@@ -1,4 +1,5 @@
-#  Reporte de Control: Diseño e Implementación del Controlador Proactivo (PI + Feedforward)
+#  Análisis de Resultados: Semana 4
+##  Reporte de Control: Diseño e Implementación del Controlador Proactivo (PI + Feedforward)
 
 Tras la identificación de los modelos de planta y perturbaciones en la fase anterior ([Análisis de la Semana 3](../analisis/semana-03.md)), se procedió al diseño de un sistema de control capaz de regular la temperatura de salida del evaporador ($T_{s,evap}$) ante variaciones en la referencia ($T_{s,evap,ref}$) y perturbaciones externas.
 
