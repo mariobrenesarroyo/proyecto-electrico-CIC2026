@@ -125,4 +125,18 @@ A continuación, se presenta la comparativa de los índices obtenidos tras la ev
 | **PI + 4FF (Clamping)** | **473.59** | **6.18** | **0.7425** | **1.1188** | **0.8177** |
 | PI + 4FF (Back-calc) | 484.38 | 6.15 | 0.7594 | 1.1142 | 0.8303 |
 
+#### Comportamiento del controlador con FF y Anti-Windup (Clamping)
+### Comportamiento Térmico
+![Temperaturas](../imagenes/problema/semana-5/Figure_2.png)
+
+### Control y Referencia
+![Control](../imagenes/problema/semana-5/Figure_1.png)
+
+### Estado del Bypass
+![Control](../imagenes/problema/semana-5/Figure_3.png)
+
 **Análisis final:** La configuración con **Clamping** demostró ser la más efectiva, logrando la mayor reducción en el error acumulado ($R1$) sin comprometer significativamente el esfuerzo de control ($R2$). Esto se debe a que elimina completamente la acumulación de error durante los periodos de saturación de la válvula, permitiendo una respuesta inmediata ante las perturbaciones.
+
+
+
+---
