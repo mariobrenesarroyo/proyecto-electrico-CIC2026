@@ -530,6 +530,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sesion-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sesión 5.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sesion-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sesión 5.3
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -782,6 +804,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sesion-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sesión 5.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sesion-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sesión 5.3
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -812,7 +856,28 @@
 </ul>
 </li>
 <li><strong>Trabajo Futuro:</strong> Finalizar la redacción del reporte técnico <code>semana-05.md</code> y realizar una prueba de sensibilidad ante variaciones de los parámetros de la planta (robustez).</li>
-<li><strong>Horas invertidas:</strong> 6 horas</li>
+<li><strong>Horas invertidas:</strong> 4 horas</li>
+</ul>
+<h2 id="sesion-52">Sesión 5.2</h2>
+<ul>
+<li><strong>Fecha:</strong> 23 de abril, 2026</li>
+<li><strong>Tipo de sesión:</strong> Reunión</li>
+<li><strong>Actividades:</strong> * Se habló un poco acerca de como optimizar de una mejor manera el controlador PI y ademas se dieron retroalimentaciones sobre como mejorar la documentación del proyeco</li>
+<li><strong>Trabajo Futuro:</strong> Aplicar las mejoras al controlador y mejorar la documentación</li>
+<li><strong>Horas invertidas:</strong> 1 hora</li>
+</ul>
+<h2 id="sesion-53">Sesión 5.3</h2>
+<ul>
+<li><strong>Fecha:</strong> 24 de abril, 2026</li>
+<li><strong>Tipo de sesión:</strong> Optimización de Estructura de Control</li>
+<li><strong>Actividades:</strong> * Se reemplazó el bloque <code>Transfer Fcn</code> por un bloque <code>PID Controller</code> nativo de Simulink en configuración <strong>Ideal</strong>.<ul>
+<li>Se configuró el <strong>Anti-windup</strong> mediante el método de <strong>Clamping</strong> y se limitó la salida del controlador entre 0 y 1 para representar las restricciones físicas del actuador.</li>
+<li>Se ajustó el parámetro integral como <span class="arithmatex">\(I = 1/T_i\)</span> (<span class="arithmatex">\(1/41.932\)</span>) para mantener la consistencia con la sintonía Lambda.</li>
+<li>Se validó el desempeño final obteniendo un índice <strong>J = 0.8177</strong>, el valor más bajo registrado hasta la fecha.</li>
+</ul>
+</li>
+<li><strong>Trabajo Futuro:</strong> Verificar el comportamiento del sistema ante ruido en los sensores y preparar la entrega final.</li>
+<li><strong>Horas invertidas:</strong> 4 horas</li>
 </ul>
 <hr />
 <div class="admonition success">
