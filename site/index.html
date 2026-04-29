@@ -538,6 +538,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bitacora/semana-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -726,6 +754,34 @@
     
   
     Semana 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="analisis/semana-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 6
   
 
     
@@ -930,6 +986,137 @@
 <p class="admonition-title">Advertencia de Seguridad</p>
 <p>Si alguna de estas condiciones se incumple, la máquina activa un <strong>bypass interno</strong> de forma automática y el sistema deja de producir frío inmediatamente.</p>
 </div>
+<hr />
+<h2 id="analisis-de-control-y-sintonizacion">Análisis de Control y Sintonización</h2>
+<p>Tras completar la fase de identificación de la planta, se procedió a un análisis exhaustivo de tres metodologías de sintonización para encontrar el equilibrio óptimo entre precisión y preservación de los actuadores. A continuación, se presenta la comparativa visual y técnica de los resultados obtenidos.</p>
+<h3 id="1-comparativa-de-metodos-investigados">1. Comparativa de Métodos Investigados</h3>
+<p>Se evaluaron tres enfoques distintos, cada uno con una filosofía de control particular:</p>
+<ul>
+<li><strong>Método Lambda (PI):</strong> Enfocado en una respuesta suave y robusta. Fue nuestra base de diseño para estabilizar el sistema con los 4 lazos de <em>Feedforward</em>.</li>
+<li><strong>Ziegler-Nichols (PID):</strong> Un método agresivo basado en la respuesta última del sistema. Aunque redujo el error drásticamente, generó un esfuerzo de control excesivo.</li>
+<li><strong>IMC - Internal Model Control (PID):</strong> El método definitivo, que utiliza el modelo de la planta para cancelar dinámicas lentas, permitiendo un ajuste fino mediante el parámetro de robustez <span class="arithmatex">\(\lambda\)</span>.</li>
+</ul>
+<h4 id="visualizacion-de-desempeno">Visualización de Desempeño</h4>
+<p>A continuación se presentan las gráficas de respuesta para cada controlador configurado:</p>
+<p><strong>Salida del controlador PI (Método Lambda)</strong> <img alt="PI_clamping" src="../imagenes/problema/semana-5/salida%20de%20controlador%20PI_clamping.png" /></p>
+<p><strong>Salida del controlador PID - Ziegler-Nichols</strong> <img alt="PID_ZN" src="../imagenes/problema/semana%206/salida%20PID%20ZN.png" /></p>
+<p><strong>Salida del controlador PID - IMC</strong> <img alt="PID_IMC" src="../imagenes/problema/semana%206/Salida%20PID%20IMC%20.png" /></p>
+<hr />
+<h3 id="el-controlador-mas-optimo-pid-imc-lambda-9">El "Controlador mas óptimo": PID - IMC (<span class="arithmatex">\(\lambda = 9\)</span>)</h3>
+<p>Tras el barrido paramétrico, el controlador <strong>PID sintonizado mediante IMC con <span class="arithmatex">\(\lambda = 9\)</span></strong> se consolidó como la solución ganadora, logrando un índice récord de <strong>J = 0.7265</strong>. </p>
+<p>Este controlador destaca por reducir el error acumulado (<span class="arithmatex">\(R1\)</span>) en un <strong>27%</strong> respecto al controlador de referencia, manteniendo un esfuerzo de control (<span class="arithmatex">\(R2\)</span>) físicamente viable para la máquina Yazaki.</p>
+<h4 id="parametros-tecnicos-del-controlador-estrella">Parámetros Técnicos del Controlador Estrella</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: left;">Símbolo</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Ganancia Proporcional</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(K_c\)</span></td>
+<td style="text-align: left;">0.3848</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tiempo Integral</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(T_i\)</span></td>
+<td style="text-align: left;">41.932 s</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Acción Integral (Simulink)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(1/T_i\)</span></td>
+<td style="text-align: left;">0.02385</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tiempo Derivativo</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(T_d\)</span></td>
+<td style="text-align: left;">3.443 s</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Filtro Derivativo</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(N\)</span></td>
+<td style="text-align: left;">10 (aprox)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Anti-windup</strong></td>
+<td style="text-align: left;">Método</td>
+<td style="text-align: left;">Clamping</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Condición Inicial</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(IC\)</span></td>
+<td style="text-align: left;">0.5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resumen-de-la-evolucion-de-indices">Resumen de la Evolución de Índices</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Configuración</th>
+<th style="text-align: left;">R1 (Precisión)</th>
+<th style="text-align: left;">R2 (Esfuerzo)</th>
+<th style="text-align: left;"><strong>Índice J</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PI Lambda (<span class="arithmatex">\(\lambda=18\)</span>)</td>
+<td style="text-align: left;">0.7425</td>
+<td style="text-align: left;">1.1188</td>
+<td style="text-align: left;">0.8177</td>
+</tr>
+<tr>
+<td style="text-align: left;">PID Ziegler-Nichols</td>
+<td style="text-align: left;">0.4614</td>
+<td style="text-align: left;">3.7052</td>
+<td style="text-align: left;">1.1101</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PID IMC (<span class="arithmatex">\(\lambda=9\)</span>)</strong></td>
+<td style="text-align: left;"><strong>0.5251</strong></td>
+<td style="text-align: left;"><strong>1.5321</strong></td>
+<td style="text-align: left;"><strong>0.7265</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="mejora-respecto-al-controlador-de-referencia-cr">Mejora Respecto al Controlador de Referencia (CR)</h3>
+<p>La efectividad de la estrategia <strong>PID-IMC + 4FF</strong> se valida al contrastar los resultados con el controlador de referencia proporcionado por la organización del CIC2026. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: left;">Controlador de Referencia (CR)</th>
+<th style="text-align: left;"><strong>PID - IMC (<span class="arithmatex">\(\lambda = 9\)</span>)</strong></th>
+<th style="text-align: left;"><strong>Mejora (%)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Índice J (Global)</strong></td>
+<td style="text-align: left;">1.0000</td>
+<td style="text-align: left;"><strong>0.7265</strong></td>
+<td style="text-align: left;"><strong>27.35%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>R1 (Precisión)</strong></td>
+<td style="text-align: left;">1.0000</td>
+<td style="text-align: left;"><strong>0.5251</strong></td>
+<td style="text-align: left;"><strong>47.49%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Análisis de Impacto:</strong>
+La implementación del esquema proactivo y la sintonía fina por modelo interno permitieron reducir el error acumulado casi a la mitad (<strong>-47.5%</strong>) en comparación con el controlador estándar. Aunque el esfuerzo de control (<span class="arithmatex">\(R2\)</span>) aumentó ligeramente para lograr esta precisión, el balance global (<span class="arithmatex">\(J\)</span>) sitúa a esta solución un <strong>27% por encima</strong> del rendimiento base, cumpliendo con creces los objetivos de optimización del certamen.</p>
+<hr />
+<blockquote>
+<p><strong>Conclusión técnica:</strong> La implementación del IMC permitió "domar" la agresividad del PID, obteniendo una precisión comparable a Ziegler-Nichols pero con un ahorro del <strong>58% en el esfuerzo del actuador (TV)</strong>, garantizando la longevidad mecánica de la planta.</p>
+</blockquote>
 
 
 

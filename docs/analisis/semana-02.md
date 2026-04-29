@@ -20,6 +20,9 @@ A continuación se presentan los resultados obtenidos del simulador:
 El error de seguimiento es notable, lo que justifica la necesidad de un nuevo controlador.
 ![Control](../imagenes/problema/Resutados/Referencia_vs_salida_y_senal_de_control.png)
 
+### Estado del Bypass
+![Control](../imagenes/problema/Resutados/Potencias_termicas_COP_y_estado_del_bypass.png)
+
 ---
 
 ## Justificación de Variables (Análisis de Sensibilidad)
