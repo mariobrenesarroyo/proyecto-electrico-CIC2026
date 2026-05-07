@@ -94,8 +94,9 @@ $$G(s) = \frac{K e^{-\theta s}}{\tau s + 1}$$
 
 Donde $\lambda$ es el parámetro de diseño que define la velocidad de respuesta deseada del sistema en lazo cerrado.
 
-**Salida del controlador PID - IMC**  
+**Salida del controlador PID - IMC** 
 ![PID_IMC](../imagenes/problema/semana%206/Salida%20PID%20IMC%20.png)
+
 
 Donde los índices obtenidos fueron:
 

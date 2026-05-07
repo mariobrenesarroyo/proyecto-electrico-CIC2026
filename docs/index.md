@@ -80,11 +80,12 @@ Se evaluaron tres enfoques distintos, cada uno con una filosofía de control par
 #### Visualización de Desempeño
 A continuación se presentan las gráficas de respuesta para cada controlador configurado:
 
-**Salida del controlador PI (Método Lambda)** ![PI_clamping](../imagenes/problema/semana-5/salida%20de%20controlador%20PI_clamping.png)
+**Salida del controlador PI (Método Lambda)** ![PI_clamping](imagenes/problema/semana-5/salida%20de%20controlador%20PI_clamping.png)
 
-**Salida del controlador PID - Ziegler-Nichols** ![PID_ZN](../imagenes/problema/semana%206/salida%20PID%20ZN.png)
+**Salida del controlador PID - Ziegler-Nichols** ![PID_ZN](imagenes/problema/semana%206/salida%20PID%20ZN.png)
 
-**Salida del controlador PID - IMC** ![PID_IMC](../imagenes/problema/semana%206/Salida%20PID%20IMC%20.png)
+
+**Salida del controlador PID - IMC** ![PID_IMC](imagenes/problema/semana%206/Salida%20PID%20IMC%20.png)
 
 ---
 
