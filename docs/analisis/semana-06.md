@@ -88,7 +88,7 @@ $$G(s) = \frac{K e^{-\theta s}}{\tau s + 1}$$
 
 | Parámetro | Ecuación| Valor |
 |-----------|------------------------------|-------|
-| Ganancia Proporcional ($K_c$) | $$K_c = \frac{1}{K} \cdot \frac{\tau + \frac{\theta}{2}}{\lambda + \frac{\theta}{2}}$$ | 0.83851 |
+| Ganancia Proporcional ($K_c$) | $$K_c = \frac{1}{K} \cdot \frac{\tau + \frac{\theta}{2}}{\lambda + \frac{\theta}{2}}$$ | 0.8385 |
 | Tiempo Integral ($T_i$) | $$T_i = \tau + \frac{\theta}{2}$$ | 45.683 s |
 | Tiempo Derivativo ($T_d$) | $$T_d = \frac{\tau \cdot \theta}{2\tau + \theta}$$ | 3.443 s |
 
