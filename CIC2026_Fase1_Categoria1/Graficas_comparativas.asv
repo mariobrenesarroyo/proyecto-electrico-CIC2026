@@ -1,0 +1,13 @@
+figure('Color', 'w');
+% Extraemos los datos de cada timeseries para graficarlos
+plot(datos_PI.Time, datos_PI.Data, 'b', 'LineWidth', 1); hold on;
+plot(datos_PID_ZN.Time, datos_PID_ZN.mat, 'r', 'LineWidth', 1);
+plot(datos_PID_IMC.Time, datos_PID_IMC.Data, 'g', 'LineWidth', 2.5);
+
+% Etiquetas y configuración según sugerencias
+xlabel('Tiempo (s)', 'FontSize', 12, 'FontWeight', 'bold');
+ylabel('Temperatura (T_{s\_Gen})', 'FontSize', 12, 'FontWeight', 'bold');
+title('Comparativa de Controladores: Respuesta a Perturbaciones', 'FontSize', 14);
+legend('PI (\lambda=18)', 'Ziegler-Nichols', 'PID-IMC+4FF (Propuesto)', ...
+       'Location', 'best', 'FontSize', 18);
+grid on;

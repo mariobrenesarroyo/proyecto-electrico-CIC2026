@@ -1,10 +1,12 @@
-figure('Color', 'w');
-% Extraemos los datos de cada timeseries para graficarlos
-plot(datos_PI.Time, datos_PI.Data, 'b', 'LineWidth', 1); hold on;
-plot(datos_PID_ZN.Time, datos_PID_ZN.Data, 'r', 'LineWidth', 1);
-plot(datos_PID_IMC.Time, datos_PID_IMC.Data, 'g', 'LineWidth', 2.5);
+load('Datos_PI_Lambda.mat');   Datos_PI_lambda = data;
+load('Datos_PID_ZN.mat');      Datos_PID_ZN = data;
+load('Datos_PID_IMC.mat');     Datos_PID_IMC = data;
 
-% Etiquetas y configuración según sugerencias
+figure('Color', 'w');
+plot(Datos_PI_lambda.Time, Datos_PI_lambda.Data, 'b', 'LineWidth', 1); hold on;
+plot(Datos_PID_ZN.Time, Datos_PID_ZN.Data, 'r', 'LineWidth', 1);
+plot(Datos_PID_IMC.Time, Datos_PID_IMC.Data, 'g', 'LineWidth', 2.5);
+
 xlabel('Tiempo (s)', 'FontSize', 12, 'FontWeight', 'bold');
 ylabel('Temperatura (T_{s\_Gen})', 'FontSize', 12, 'FontWeight', 'bold');
 title('Comparativa de Controladores: Respuesta a Perturbaciones', 'FontSize', 14);
